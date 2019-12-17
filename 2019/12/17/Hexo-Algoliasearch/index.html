@@ -4,8 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="My New Post3, Hexo">
-    <meta name="description" content="My New Post3 | Hexo">
+    <meta name="keywords" content="Hexo-Algoliasearch, Hexo">
+    <meta name="description" content="Hexo-Algoliasearch简介 一个在Algolia上为Hexo博客的帖子编制索引的插件 ，增加搜索功能。
+
+安装1npm install hexo-algoliasearch --save
+
+ Hexo自动检测到所有插件 ， 如">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>My New Post3 | Hexo</title>
+    <title>Hexo-Algoliasearch | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -411,13 +415,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        My New Post3
+                        Hexo-Algoliasearch
                     </div>
                 </div>
             </div>
@@ -540,7 +544,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-25
+                    2019-12-17
                 </div>
                 
                 
@@ -558,7 +562,104 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="Hexo-Algoliasearch"><a href="#Hexo-Algoliasearch" class="headerlink" title="Hexo-Algoliasearch"></a>Hexo-Algoliasearch</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p> <strong>一个在Algolia上为Hexo博客的帖子编制索引的插件 ，增加搜索功能。</strong></p>
+<p><img src="https://puui.qpic.cn/fans_admin/0/3_290186585_1571456373974/0" alt=""></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-algoliasearch --save</span><br></pre></td></tr></table></figure>
+
+<p> <strong>Hexo自动检测到所有插件 ， 如果不是这种情况，请在您的<code>_config.yml</code>文件中注册插件：</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plugins:</span><br><span class="line">  - hexo-algoliasearch</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p> <strong>在<code>_config.yml</code>文件中配置此插件：</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">algolia:</span><br><span class="line">  appId: &quot;Application ID 对应的值&quot;</span><br><span class="line">  apiKey: &quot;新建的 api key 对应的值&quot;</span><br><span class="line">  adminApiKey: &quot;***&quot;</span><br><span class="line">  chunkSize: 5000</span><br><span class="line">  indexName: &quot;my-blog&quot;</span><br><span class="line">  fields:</span><br><span class="line">    - content:strip:truncate,0,500</span><br><span class="line">    - excerpt:strip</span><br><span class="line">    - gallery</span><br><span class="line">    - permalink</span><br><span class="line">    - photos</span><br><span class="line">    - slug</span><br><span class="line">    - tags</span><br><span class="line">    - title</span><br><span class="line">    - about</span><br><span class="line">    - categories</span><br><span class="line">    - link</span><br><span class="line">    - movies</span><br><span class="line">    - music</span><br><span class="line">    - _posts</span><br><span class="line">    - messageboard</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>键</th>
+<th>类型</th>
+<th>默认</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>appId</td>
+<td>String</td>
+<td></td>
+<td>您的应用程序ID。可选，如果<code>ALGOLIA_APP_ID</code>设置了环境变量</td>
+</tr>
+<tr>
+<td>apiKey</td>
+<td>String</td>
+<td></td>
+<td>您的API密钥（只读）。用于搜索索引。可选，如果<code>ALGOLIA_API_KEY</code>设置了环境变量</td>
+</tr>
+<tr>
+<td>adminApiKey</td>
+<td>String</td>
+<td></td>
+<td>您的adminAPI密钥。它用于创建，删除，更新索引。可选，如果<code>ALGOLIA_ADMIN_API_KEY</code>设置了环境变量</td>
+</tr>
+<tr>
+<td>chunkSize</td>
+<td>Number</td>
+<td>5000</td>
+<td>记录/帖子被分成几块上传。建议使用Algolia以<code>5000</code>获得最佳性能。请注意，如果您要为帖子内容编制索引，则由于篇幅限制，它可能会失败。为了克服这个问题，请减小块的大小，直到通过为止。</td>
+</tr>
+<tr>
+<td>indexName</td>
+<td>String</td>
+<td></td>
+<td>存储帖子的索引名称。可选，如果<code>ALGOLIA_INDEX_NAME</code>设置了环境变量</td>
+</tr>
+<tr>
+<td>fields</td>
+<td>List</td>
+<td></td>
+<td>要索引的字段名称列表。用分隔字段名称和过滤器<code>:</code>。阅读<a href="https://github.com/LouisBarranqueiro/hexo-algoliasearch#filters" target="_blank" rel="noopener">过滤器</a>以获取更多信息</td>
+</tr>
+</tbody></table>
+<h3 id="筛选器"><a href="#筛选器" class="headerlink" title="筛选器"></a>筛选器</h3><p>过滤器使您能够在建立索引之前处理字段的值。过滤器之间用冒号（<code>:</code>）隔开，并且可能具有以逗号（<code>,</code>）分隔的可选参数。可以链接多个过滤器。一个滤波器的输出将应用于下一个。</p>
+<h3 id="过滤器列表："><a href="#过滤器列表：" class="headerlink" title="过滤器列表："></a>过滤器列表：</h3><table>
+<thead>
+<tr>
+<th>过滤</th>
+<th>签名</th>
+<th>句法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>跳闸</td>
+<td><code>strip()</code></td>
+<td><code>strip</code></td>
+<td>删除HTML。对于摘录和内容值不索引HTML标签和属性可能很有用。</td>
+</tr>
+<tr>
+<td>截短</td>
+<td><code>truncate(start: number, end: number)</code></td>
+<td><code>truncate,0,300</code></td>
+<td>从<code>start</code>索引到<code>end</code>索引截断字符串。阿尔戈利亚（Algolia）在记录大小方面有一些限制，因此减少帖子内容可能很有用。</td>
+</tr>
+</tbody></table>
+<h4 id="例"><a href="#例" class="headerlink" title="例"></a>例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fields:</span><br><span class="line">  - content:strip:truncate,0,200</span><br></pre></td></tr></table></figure>
+
+<h3 id="选件"><a href="#选件" class="headerlink" title="选件"></a>选件</h3><table>
+<thead>
+<tr>
+<th>选件</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-n，-不清除</td>
+<td>不清除现有索引</td>
+</tr>
+</tbody></table>
+<h2 id="生成索引文件"><a href="#生成索引文件" class="headerlink" title="生成索引文件"></a>生成索引文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo algolia</span><br></pre></td></tr></table></figure>
+
+
             </div>
             <hr/>
 
@@ -583,7 +684,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hzerui.github.io/2019/10/25/My-New-Post3/">https://hzerui.github.io/2019/10/25/My-New-Post3/</a>
+                    <a href="https://hzerui.github.io/2019/12/17/Hexo-Algoliasearch/">https://hzerui.github.io/2019/12/17/Hexo-Algoliasearch/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -789,25 +890,29 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/25/My-New-Post1/">
+                <a href="/2019/12/17/Hexo%E6%B7%BB%E5%8A%A0RSS%E8%AE%A2%E9%98%85/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="My-New-Post1">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hexo添加RSS订阅">
                         
-                        <span class="card-title">My-New-Post1</span>
+                        <span class="card-title">Hexo添加RSS订阅</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            MySQL-Replication
-在主服务器上，您必须启用二进制日志记录并配置唯一的服务器ID。需要重启服务器。==主：==12345678910主server-id不能和从相同[root@Mysql ~]# vim /etc/my.cn
+                            Hexo添加RSS订阅安装feed插件 hexo博客有一个专门生成RSS xml文件的插件hexo-generator-feed 
+1npm install hexo-generator-feed
+
+
+
+启用插件 在博客工程文件根目录下_c
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-25
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-17
                         </span>
                         <span class="publish-author">
                             
@@ -827,24 +932,29 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/24/hello-world/">
+                <a href="/2019/12/17/Hexo-Douban/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Hexo-Douban">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Hexo-Douban</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            Hexo-Douban简介 Hexo-Douban —— 一个在 Hexo 页面中嵌入豆瓣个人主页的小插件，能够在Blog同步豆瓣个人主页信息。
+安装1npm install hexo-douban --save
+
+
+
+配置 将下面的配置写
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-17
                             </span>
                         <span class="publish-author">
                             

